@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public float startSpeed = 400f;
-    public float increaseSpeed = 100f;
-    public float topSpeed = 600f;
+    public float startSpeed = 600f;
+    public float increaseSpeed = 25f;
+    public float topSpeed = 1200f;
 
     private Rigidbody2D rb;
     private Vector2 startingLaunch;
@@ -23,17 +23,8 @@ public class Ball : MonoBehaviour
     {
         float randomDirectionY = Random.Range(-1, 2);
         float randomDirectionX = Random.Range(0, 2) * 2 - 1;
-        startingLaunch = new Vector2(-1, randomDirectionY).normalized;
+        startingLaunch = new Vector2(randomDirectionX, randomDirectionY).normalized;
         rb.velocity = startingLaunch * startSpeed;
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        // Increase ball speed
-        if (rb.velocity.magnitude < topSpeed)
-        {
-            rb.velocity = rb.velocity.normalized * (rb.velocity.magnitude + increaseSpeed);
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -42,15 +33,29 @@ public class Ball : MonoBehaviour
         {
             Debug.Log("hit paddle");
             Debug.Log(rb.velocity.magnitude);
-            Vector2 sendBack = new Vector2(-rb.velocity.x, Random.Range(-90, 91)).normalized;
-            rb.velocity = sendBack * rb.velocity.magnitude;
+            Vector2 sendBack = new Vector2(-rb.velocity.x, Random.Range(-300, 301)).normalized;
+            if (rb.velocity.magnitude < topSpeed)
+            {
+                rb.velocity = sendBack * (rb.velocity.magnitude + increaseSpeed);
+            }
+            else
+            {
+                rb.velocity = sendBack * topSpeed;
+            }
         }
         else if (collision.CompareTag("Boundry"))
         {
             Debug.Log("hit boundry");
             Debug.Log(rb.velocity.magnitude);
             Vector2 sendBack = new Vector2(rb.velocity.x, -rb.velocity.y).normalized;
-            rb.velocity = sendBack * rb.velocity.magnitude;
+            if (rb.velocity.magnitude < topSpeed)
+            {
+                rb.velocity = sendBack * (rb.velocity.magnitude + increaseSpeed);
+            }
+            else
+            {
+                rb.velocity = sendBack * topSpeed;
+            }
         }
         else if (collision.CompareTag("Goal"))
         {
@@ -63,7 +68,7 @@ public class Ball : MonoBehaviour
     void Reset()
     {
         rb.position = startingPoint;
-        startSpeed = 350f;
+        startSpeed = 600f;
         Launch();
     }
 }
