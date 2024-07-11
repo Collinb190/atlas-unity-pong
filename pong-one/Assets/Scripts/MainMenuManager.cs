@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
-    public void OnePlayerGame()
+    public void TwoPlayerGame()
     {
-        string onePlayerGame = "Game";
-        SceneManager.LoadScene(onePlayerGame);
+        string twoPlayerGame = "Game";
+        SceneManager.LoadScene(twoPlayerGame);
         Time.timeScale = 1.0f;
     }
 
