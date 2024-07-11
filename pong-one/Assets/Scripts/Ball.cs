@@ -10,11 +10,13 @@ public class Ball : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 startingLaunch;
     private Vector2 startingPoint;
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        gameManager = FindObjectOfType<GameManager>();
         startingPoint = rb.position;
         Launch();
     }
@@ -61,6 +63,16 @@ public class Ball : MonoBehaviour
         {
             Debug.Log("goal scored");
             Debug.Log(rb.velocity.magnitude);
+            if (collision.name == "LeftGoal")
+            {
+                // Right player scores
+                gameManager.AddScore("Right");
+            }
+            else
+            {
+                // Left player scores
+                gameManager.AddScore("Left");
+            }
             Reset();
         }
     }
