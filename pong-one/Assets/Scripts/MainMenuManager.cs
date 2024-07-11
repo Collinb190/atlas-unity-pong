@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    public void OnePlayerGame()
+    {
+        string onePlayerGame = "Multiplayer";
+        SceneManager.LoadScene(onePlayerGame);
+        Time.timeScale = 1.0f;
+    }
     public void TwoPlayerGame()
     {
         string twoPlayerGame = "Game";
