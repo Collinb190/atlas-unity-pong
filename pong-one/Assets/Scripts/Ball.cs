@@ -11,6 +11,8 @@ public class Ball : MonoBehaviour
     private Vector2 startingLaunch;
     private Vector2 startingPoint;
     private GameManager gameManager;
+    public AudioSource ballSound;
+    public AudioSource goalSound;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,7 @@ public class Ball : MonoBehaviour
         {
             Debug.Log("hit paddle");
             Debug.Log(rb.velocity.magnitude);
+            ballSound.Play();
             Vector2 sendBack = new Vector2(-rb.velocity.x, Random.Range(-300, 301)).normalized;
             if (rb.velocity.magnitude < topSpeed)
             {
@@ -49,6 +52,7 @@ public class Ball : MonoBehaviour
         {
             Debug.Log("hit boundry");
             Debug.Log(rb.velocity.magnitude);
+            ballSound.Play();
             Vector2 sendBack = new Vector2(rb.velocity.x, -rb.velocity.y).normalized;
             if (rb.velocity.magnitude < topSpeed)
             {
@@ -63,6 +67,7 @@ public class Ball : MonoBehaviour
         {
             Debug.Log("goal scored");
             Debug.Log(rb.velocity.magnitude);
+            goalSound.Play();
             if (collision.name == "LeftGoal")
             {
                 // Right player scores
