@@ -9,7 +9,10 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI leftScoreText;
     public TextMeshProUGUI rightScoreText;
-    //public TextMeshProUGUI resultText;
+    public TextMeshProUGUI playerOneWin;
+    public TextMeshProUGUI playerOneLost;
+    public TextMeshProUGUI playerTwoWin;
+    public TextMeshProUGUI playerTwoLost;
 
     // Start is called before the first frame update
     private void Start()
@@ -46,8 +49,19 @@ public class GameManager : MonoBehaviour
 
     void EndGame(string result)
     {
-        //resultText.text = result;
         Time.timeScale = 0; // Stop the game
-        // Show restart or quit options (optional)
+
+        if (result == "Player One Wins!")
+        {
+            Debug.Log("Player One Wins!");
+            playerOneWin.gameObject.SetActive(true);
+            playerTwoLost.gameObject.SetActive(true);
+        }
+        else if (result == "Player Two Wins!")
+        {
+            Debug.Log("Player Two Wins!");
+            playerOneLost.gameObject.SetActive(true);
+            playerTwoWin.gameObject.SetActive(true);
+        }
     }
 }
