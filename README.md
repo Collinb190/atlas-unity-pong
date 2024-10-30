@@ -8,8 +8,7 @@ Hello! I am Lin, a passionate game developer with a love for creating engaging e
 
 ## Introduction
 
-**Parry Pong** is a 2D platformer game developed in Unity. In this game, you play as Clio, who discovers that her idyllic natural life is nothing more than a simulation. Players must navigate through various levels, overcoming obstacles and enemies to collect three coins and unlock the exit. The game features vibrant graphics, engaging animations, and a challenging environment that tests your skills. Can you help Clio escape back to reality? 
-
+**Parry Pong** is a pixel-art twist on the classic Pong game, developed in Unity. In this competitive 2D arcade game, you control a sword paddle and face off against your opponent, but with a new mechanic: parrying. Using this unique skill, you can either speed up or slow down the ball, adding an extra layer of strategy and intensity to every rally. Parry Pong features custom pixel assets and dynamic, fast-paced gameplay. Hone your reflexes and timing as you master the parry to outmaneuver your opponent and claim victory. Will you control the pace, or be overwhelmed by it?
 
 ## Table of Contents
 
@@ -21,11 +20,12 @@ Hello! I am Lin, a passionate game developer with a love for creating engaging e
 
 ## Features
 
-- **Health**: Clio starts with 3 lives. Fall off the map, and you die. Take 3 hits, you die.
-- **Boars**: Flying boars will fly at you to prevent you from escaping the simulation. 
-- **Coins**: Collect 3 coins to unlock the exit!  
-- **Movement**: Clio can jump and move left to right, with fully animated run and jump cycles. 
-- **Attack**: Clio can kill boars by jumping up into them from underneath. Jump on top like a Goomba, and it'll just hurt Clio!
+- **Winning Condition**: The first player to reach 11 points wins the match.
+- **Parry Mechanic**: Use precise timing to parry the ball. A successful parry will either speed up or slow down the ball, giving you a strategic edge over your opponent.
+- **Score Tracking**: Each player’s score is tracked in real-time, intensifying the gameplay as players approach the 11-point goal.
+- **Dynamic Speed**: The ball’s speed changes with each parry, keeping the gameplay exciting and unpredictable.
+- **Pixel Art Style**: Enjoy retro-inspired visuals with custom pixel assets that enhance the classic *Pong* experience with a fresh, modern twist.
+
 
 ## Getting Started
 
