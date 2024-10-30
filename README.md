@@ -1,6 +1,6 @@
 # Parry Pong
 
-
+<img src="Images/forPongReadMe.png" alt="My Image" width="400"/>
 
 ## About Me
 
@@ -48,7 +48,7 @@ Works on PC, Mac, and Linux
 
 ## Authors
 
-1. Collin Ballard [https://github.com/Collinb190]
+Collin Ballard [https://github.com/Collinb190]
 
 
 ## License
