@@ -4,31 +4,12 @@ using UnityEngine;
 
 public class Paddle : MonoBehaviour
 {
-    public KeyCode upKey;
-    public KeyCode downKey;
-    public float paddleSpeed = 6f;
-    public float verticalInput;
+    protected Rigidbody2D rb;
 
-    // Update is called once per frame
-    void Update()
+    public float paddleSpeed = 9f;
+
+    private void Awake()
     {
-        MovePaddle();
-    }
-
-    void MovePaddle()
-    {
-        verticalInput = 0;
-
-        if (Input.GetKey(upKey))
-        {
-            verticalInput = 1;
-        }
-        else if (Input.GetKey(downKey))
-        {
-            verticalInput = -1;
-        }
-
-        transform.Translate(new Vector2(0, verticalInput * paddleSpeed * Time.deltaTime));
+        rb = GetComponent<Rigidbody2D>();
     }
 }
-

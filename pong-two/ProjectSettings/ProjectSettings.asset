@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: ba862440d26d3df40b65a2b30ebdbd8e
+  productGUID: deedf2d2dae0e8f4cab0f0aa43803417
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -705,10 +705,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: ebd1ccd1-fba7-48c6-919f-26921582d426
+  cloudProjectId: c9b5659d-b206-4b1d-90a3-b0c8e8e4f732
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: pong-two
+  projectName: pong-two 2024-07-29_09-33-41
   organizationId: collinb190
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
